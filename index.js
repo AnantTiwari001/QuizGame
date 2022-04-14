@@ -20,11 +20,13 @@ function startIt() {
     b.textContent='B:'
     c.textContent='C:'
     d.textContent='D:'
-    arrayItem=[a, b, c, d]
     a.style.backgroundColor='#24a0ed'
     b.style.backgroundColor='#24a0ed'
     c.style.backgroundColor='#24a0ed'
     d.style.backgroundColor='#24a0ed'
+    arrayItem=[a, b, c, d]
+    correctAnswer[0].removeAttribute('data-bs-target');
+
     setTimeout(
         start(), 1000
     )
