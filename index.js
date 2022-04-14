@@ -20,6 +20,11 @@ function startIt() {
     b.textContent='B:'
     c.textContent='C:'
     d.textContent='D:'
+    arrayItem=[a, b, c, d]
+    a.style.backgroundColor='#24a0ed'
+    b.style.backgroundColor='#24a0ed'
+    c.style.backgroundColor='#24a0ed'
+    d.style.backgroundColor='#24a0ed'
     setTimeout(
         start(), 1000
     )
