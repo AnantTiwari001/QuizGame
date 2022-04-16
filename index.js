@@ -1,12 +1,13 @@
+let difficulty= 'easy';
 console.log('Its inside the quiz javascript file');
-let website= 'https://opentdb.com/api.php?amount=1&category=17&difficulty=easy&type=multiple';
-
+let website= `https://opentdb.com/api.php?amount=1&category=17&difficulty=${difficulty}&type=multiple`;
 let question=document.getElementById('question');
 let a= document.getElementById('A');
 let b= document.getElementById('B');
 let c= document.getElementById('C');
 let d= document.getElementById('D');
 let container= document.getElementById('show');
+let modeCon= document.getElementById('modey');
 
 var ab;
 var int
@@ -47,6 +48,7 @@ var arrayItem=[a,b,c,d];
 
 function start() {
     console.log('the game has started')
+    website= `https://opentdb.com/api.php?amount=1&category=17&difficulty=${difficulty}&type=multiple`;
     fetch(website)
     .then((result) => {
         console.log('We have retrived the quiz data');
@@ -89,5 +91,25 @@ function check(element) {
     }
 } 
 
+function mode() {
+    if (modeCon.value==1) {
+        modeCon.style.backgroundColor='#42ba96';
+        console.log('It is easy')
+        difficulty='easy';
+        startIt();
+    }
+    if (modeCon.value==2) {
+        modeCon.style.backgroundColor='#e0e01f';
+        console.log('It is medium')
+        difficulty='medium';
+        startIt();
+    }
+    if (modeCon.value==3) {
+        modeCon.style.backgroundColor='red';
+        console.log('Its is hard')
+        difficulty='hard';
+        startIt();
+    }
+}
 
 // df8aa604d4a0f947a75a4fe0a101322195d754a18b6a213e982b754ef428215a  ---yourToken
