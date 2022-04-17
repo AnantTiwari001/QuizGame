@@ -1,3 +1,4 @@
+// implementation of decoding of data recieved by the server
 let difficulty= 'easy';
 console.log('Its inside the quiz javascript file');
 let website= `https://opentdb.com/api.php?amount=1&category=17&difficulty=${difficulty}&type=multiple`;
@@ -69,13 +70,13 @@ function start() {
 
 
 function getQuestion() {
-    question.textContent=array.results[0].question;
+    question.innerHTML=array.results[0].question;
     int=Math.floor(Math.random()*4);
-    arrayItem[int].textContent+=array.results[0].correct_answer;
+    arrayItem[int].innerHTML+=array.results[0].correct_answer;
     correctAnswer= arrayItem.splice(int,1);
     correctAnswer[0].setAttribute('data-bs-target', '#exampleModal');   //data-bs-target="#exampleModal"
     for (let i = 0; i < arrayItem.length; i++) {
-        arrayItem[i].textContent+=array.results[0].incorrect_answers[i];
+        arrayItem[i].innerHTML+=array.results[0].incorrect_answers[i];
     }
 }
 
