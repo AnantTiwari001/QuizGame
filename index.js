@@ -1,4 +1,5 @@
-// implementation of decoding of data recieved by the server
+// implementation of different categories of quiz and images with a little touch up
+let testing;
 let difficulty= 'easy';
 console.log('Its inside the quiz javascript file');
 let website= `https://opentdb.com/api.php?amount=1&category=17&difficulty=${difficulty}&type=multiple`;
@@ -34,7 +35,8 @@ function startIt() {
     )
 }
 function rough() {
-    console.log('hi boys it is good rough')
+    console.log('hi boys it is good rough');
+    testing='yo yo and it stores the thing on mutual script'
 }
 
 document.onload= start()
@@ -50,6 +52,19 @@ var arrayItem=[a,b,c,d];
 function start() {
     console.log('the game has started')
     website= `https://opentdb.com/api.php?amount=1&category=17&difficulty=${difficulty}&type=multiple`;
+    if (window.location.href.search(/quizPolitics.html/)>0){
+        website= `https://opentdb.com/api.php?amount=1&category=24&difficulty=${difficulty}&type=multiple`;
+    }else if (window.location.href.search(/quizMythology.html/)>0){
+        website= `https://opentdb.com/api.php?amount=1&category=20&difficulty=${difficulty}&type=multiple`;
+    }else if (window.location.href.search(/quizGeography.html/)>0){
+        website= `https://opentdb.com/api.php?amount=1&category=22&difficulty=${difficulty}&type=multiple`;
+    }else if (window.location.href.search(/quizSport.html/)>0){
+        website= `https://opentdb.com/api.php?amount=1&category=21&difficulty=${difficulty}&type=multiple`;
+    }else if (window.location.href.search(/quizHistory.html/)>0){
+        website= `https://opentdb.com/api.php?amount=1&category=23&difficulty=${difficulty}&type=multiple`;
+    }else if (window.location.href.search(/quizStart.html/)>0){
+        website= `https://opentdb.com/api.php?amount=1&difficulty=${difficulty}&type=multiple`;
+    }
     fetch(website)
     .then((result) => {
         console.log('We have retrived the quiz data');
